@@ -1,0 +1,15 @@
+:root {}
+
+::selection {}
+
+.light {
+  --background-color: hsl(0, 0%, 100%);
+  --color: hsl(0, 0%, 8%);
+  color-scheme: light;
+}
+
+.dark {
+  --color: hsl(0, 0%, 100%);
+  --background-color: hsl(0, 0%, 8%);
+  color-scheme: dark;
+}
