@@ -1,7 +1,7 @@
 import { Roboto_Slab } from 'next/font/google'
 import type { Metadata } from 'next'
-import '../styles/reset.css'
-import '../styles/globals.css'
+import '@styles/reset.css'
+import '@styles/globals.css'
 
 const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
