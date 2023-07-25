@@ -1,0 +1,6 @@
+.separator {
+  margin-block: 3rem;
+  width: 100%;
+  height: .1rem;
+  background-color: var(--gray-color);
+}

@@ -1,0 +1,42 @@
+.pageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.pageHeader__title {
+  font-size: clamp(4rem, 4vw, 5rem);
+}
+
+.latestPost {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.latestPost__title {
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: .5rem;
+  margin-bottom: 3rem;
+}
+
+.latestPost__imageDecoration {
+  filter: saturate(0);
+  transition: filter 250ms ease-in-out;
+}
+
+.latestPost__imageDecoration:hover {
+  filter: saturate(1);
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}

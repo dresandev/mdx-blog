@@ -1,0 +1,19 @@
+.postCard {
+  text-decoration: none;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.h3Title {
+  font-size: 3rem;
+}
+
+.time {
+  color: var(--gray-color);
+}
+
+.postCard:hover, .postCard:hover .time {
+  color: rgb(234, 250, 0);
+}

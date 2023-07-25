@@ -1,0 +1,32 @@
+.searchBarContainer {
+  position: relative;
+  flex-basis: 43rem;
+}
+
+.searchBar {
+  padding: 1rem 2rem 1rem 5.4rem;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 2rem;
+  border: .1rem solid var(--gray-color);
+  transition: border-color 250ms ease;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 1.2rem;
+  left: 2rem;
+}
+
+.searchIcon g {
+  stroke: var(--gray-color);
+}
+
+.searchBar::placeholder {
+  color: var(--gray-color);
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: var(--color);
+}

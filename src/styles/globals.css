@@ -1,15 +1,30 @@
-:root {}
-
-::selection {}
-
-.light {
-  --background-color: hsl(0, 0%, 100%);
-  --color: hsl(0, 0%, 8%);
-  color-scheme: light;
+:root {
+  --background-color: hsl(0, 0%, 0%);
+  --color: hsl(0, 0%, 100%);
+  --gray-color: hsla(0, 0%, 100%, .5);
 }
 
-.dark {
-  --color: hsl(0, 0%, 100%);
-  --background-color: hsl(0, 0%, 8%);
-  color-scheme: dark;
+::selection {
+  background-color: var(--color);
+  color: var(--background-color);
+}
+
+.radial_gradient_background {
+  position: fixed;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(farthest-side at 50% 50%, #2a2a2a, transparent);
+}
+
+.body_container{
+  max-width: 160rem;
+  margin-inline: auto;
+  padding-inline: 3rem;
+}
+
+.main_container{
+  max-width: 120rem;
+  margin-inline: auto;
 }
