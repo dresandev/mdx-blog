@@ -1,10 +1,11 @@
-import { Fira_Sans } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import type { Metadata } from 'next'
 import { Header } from '@components/Header'
+import { Footer } from '@components/Footer'
 import '@styles/reset.css'
 import '@styles/globals.css'
 
-const firaSans = Fira_Sans({
+const roboto = Roboto({
   subsets: ['latin'],
   weight: [
     '400',
@@ -13,7 +14,7 @@ const firaSans = Fira_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Dresan - Blog',
+  title: 'Dresan Blog',
   description: 'Blog personal sobre desarrollo de software enfocado especialmente en tecnologías Frontend (CSS, Javascript, Next.js, React, entre otras).',
 }
 
@@ -24,12 +25,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='es'>
-      <body className={`${firaSans.className} body_container`}>
-        <div className='radial_gradient_background' draggable='false'></div>
+      <body className={`${roboto.className} bodyContainer`}>
+        <div className='radialGradientBackground' draggable='false'></div>
         <Header />
-        <main className='main_container'>
+        <main className='mainContainer'>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )

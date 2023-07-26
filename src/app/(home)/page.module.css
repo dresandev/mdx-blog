@@ -1,4 +1,4 @@
-.pageHeader {
+.header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,8 +7,8 @@
   margin-bottom: 5rem;
 }
 
-.pageHeader__title {
-  font-size: clamp(4rem, 4vw, 5rem);
+.headerTitle {
+  font-size: clamp(4rem, 4vw, 4.5rem);
 }
 
 .latestPost {
@@ -19,24 +19,28 @@
   margin-bottom: 5rem;
 }
 
-.latestPost__title {
+.h2Title {
   font-size: 2rem;
   font-weight: normal;
   letter-spacing: .5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-.latestPost__imageDecoration {
+.imageDecoration {
   filter: saturate(0);
   transition: filter 250ms ease-in-out;
 }
 
-.latestPost__imageDecoration:hover {
+.imageDecoration:hover {
   filter: saturate(1);
+}
+
+.posts {
+  margin-bottom: 10rem;
 }
 
 .postsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 5rem;
 }
