@@ -1,0 +1,42 @@
+.titleWrapper {
+  position: relative;
+  left: 50%;
+  margin: 0;
+  margin-left: -50vw;
+  padding-block: 3rem;
+  width: 100vw;
+  background-color: var(--color);
+  color: var(--background-color);
+}
+
+.spacer {
+  height: 7rem;
+}
+
+.title::selection {
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+.contentContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.content {}
+
+.tableOfContents {
+  flex-basis: 25rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .contentContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tableOfContents {
+    display: none;
+  }
+}

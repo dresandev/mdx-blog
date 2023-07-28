@@ -25,10 +25,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='es'>
-      <body className={`${roboto.className} bodyContainer`}>
-        <div className='radialGradientBackground' draggable='false'></div>
+      <body className={roboto.className}>
+        <div
+          className='radialGradientBackground'
+          draggable='false'
+        ></div>
         <Header />
-        <main className='mainContainer'>
+        <main className='container'>
           {children}
         </main>
         <Footer />

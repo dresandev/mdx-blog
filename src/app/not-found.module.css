@@ -1,0 +1,11 @@
+.container {
+  height: calc(100vh - 18rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(15rem, 4vw, 20rem);
+}

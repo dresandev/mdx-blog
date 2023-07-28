@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5rem;
-  padding: 3rem 0;
+  padding: 3rem 2rem;
 }
 
 .link {

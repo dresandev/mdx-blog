@@ -1,52 +1,21 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  padding-block: 3rem;
-  border-top: .1rem solid var(--gray-color);
+  align-items: center;
+  padding: 3rem 2rem;
 }
 
 @media screen and (max-width: 500px) {
   .footer {
+    gap: 2rem;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
   }
-}
-
-.logoContainer {
-  position: relative;
-}
-
-.bubble {
-  position: absolute;
-}
-
-.bubble:nth-of-type(1) {
-  right: -5rem;
-  top: 0;
-}
-
-.bubble:nth-of-type(2) {
-  right: -3rem;
-  top: 5rem;
-  width: 2.5rem;
-}
-
-.bubble:nth-of-type(3) {
-  right: 2rem;
-  top: 6rem;
-  width: 2rem;
-}
-
-.linksTitle {
-  margin-bottom: 1.5rem;
-  color: var(--gray-color);
 }
 
 .linksContainer {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .link {
