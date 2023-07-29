@@ -7,3 +7,9 @@ export interface Post {
   estimatedReadingTime: string
   published: boolean
 }
+
+export interface Heading {
+  slug: string;
+  title: string;
+  level: number;
+}

@@ -18,5 +18,5 @@
 
 .postCard:hover,
 .postCard:hover .time {
-  color: #f7df1c;
+  color: hsl(53, 93%, 54%);
 }

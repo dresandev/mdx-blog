@@ -1,0 +1,28 @@
+.title {
+  font-size: 2.2rem;
+  color: hsl(0, 0%, 85%);
+}
+
+.nav ul {
+  padding-left: 0;
+}
+
+.nav ul ul {
+  padding-left: 1rem;
+  font-size: 1.7rem;
+}
+
+.nav li {
+  margin-top: .5rem;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: hsl(0, 1%, 70%);
+  transition: color 250ms ease-in-out;
+}
+
+.link:hover {
+  color: var(--color);
+}

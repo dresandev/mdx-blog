@@ -1,17 +1,18 @@
+import { cache } from 'react'
 import matter from 'gray-matter'
 import path from 'path'
-import type { Post } from '@types'
 import fs from 'fs/promises'
-import { cache } from 'react'
+import type { Post } from '@types'
 
 const getPosts = cache(async () => {
-  const posts = await fs.readdir('./src/posts/')
+  const relativeFilePath = './src/posts/'
+  const posts = await fs.readdir(relativeFilePath)
 
   return Promise.all(
     posts
       .filter(file => path.extname(file) === '.mdx')
       .map(async file => {
-        const filePath = `./src/posts/${file}`
+        const filePath = `${relativeFilePath}${file}`
         const postContent = await fs.readFile(filePath, 'utf8')
         const { data, content } = matter(postContent)
 

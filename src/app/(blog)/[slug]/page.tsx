@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation'
-import { extractHeadings } from 'extract-md-headings'
 import getPosts, { getPost } from '@helpers/getPosts'
 import { getHeadings } from '@helpers/getHeadings'
 import { PostBody } from '@mdx/PostBody'
@@ -14,7 +13,6 @@ interface BlogProps {
 
 export async function generateMetadata({ params }: BlogProps) {
   const post = await getPost(params.slug)
-
   return {
     title: post?.title
   }
@@ -24,9 +22,7 @@ export async function generateStaticParams() {
   const posts = await getPosts()
   return posts.map(post => (
     {
-      params: {
-        slug: post?.slug
-      }
+      params: { slug: post?.slug }
     } as BlogProps))
 }
 
@@ -34,9 +30,8 @@ export default async function Blog({ params }: BlogProps) {
   const post = await getPost(params.slug)
 
   if (!post) return notFound()
-  const headings = extractHeadings(`./src/posts/${params.slug}.mdx`)
 
-  const headings2 = getHeadings(post.body)
+  const headings = getHeadings(post.body)
 
   return (
     <>
@@ -49,12 +44,18 @@ export default async function Blog({ params }: BlogProps) {
 
       <div className={styles.contentContainer}>
         <article className={styles.content}>
+          <h2 id='introduccion' className='hideElement'>
+            Introducción
+          </h2>
           <PostBody>
             {post.body}
           </PostBody>
         </article>
-        <aside className={styles.tableOfContents}>
-          <TableOfContents headings={headings} />
+        <aside className={styles.asideContainer}>
+          <TableOfContents
+            className={styles.tableOfContents}
+            headings={headings}
+          />
         </aside>
       </div>
     </>
