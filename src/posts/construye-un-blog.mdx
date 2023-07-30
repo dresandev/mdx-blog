@@ -15,12 +15,17 @@ React es una biblioteca de JavaScript que se enfoca en la creación de component
 
 ## Beneficios de React
 
+### Algun beneficio
+
 - **Facilidad de uso**: Con una curva de aprendizaje suave, React permite a los desarrolladores comenzar a construir rápidamente interfaces interactivas.
 - **Componentes Reutilizables**: La modularidad es clave en React. Los componentes se pueden reutilizar en diferentes partes de la aplicación, lo que mejora la eficiencia y facilita el mantenimiento.
 - **Virtual DOM**: React utiliza un Virtual DOM, lo que significa que realiza cambios en la interfaz de manera eficiente, minimizando la manipulación directa del DOM y mejorando el rendimiento general de la aplicación.
 - **Gran Comunidad y Ecosistema**: React cuenta con una comunidad activa y un ecosistema sólido. Existen numerosas bibliotecas y herramientas desarrolladas en torno a React, lo que facilita aún más el desarrollo de aplicaciones.
 
 ## Ejemplo de Componente React
+
+Este es un link [Home page](/)
+<a target='_blank' href='https://dresan.me/'>Enlace externo</a>
 
 ```.tsx
 import React from 'react';
@@ -32,15 +37,70 @@ const Saludo = ({ nombre }) => {
 export default Saludo;
 ```
 
-## Conclusión
+```page.tsx
+import { notFound } from 'next/navigation'
+import getPosts, { getPost } from '@helpers/getPosts'
+import { getHeadings } from '@helpers/getHeadings'
+import { PostBody } from '@mdx/PostBody'
+import { TableOfContents } from '@components/TableOfContents'
+import styles from './page.module.css'
+import '@styles/markdown.css'
 
-React ha revolucionado el desarrollo web al proporcionar una manera más eficiente y sencilla de crear interfaces de usuario interactivas. Su enfoque en componentes reutilizables y la programación declarativa ha permitido a los desarrolladores construir aplicaciones más rápidamente y con menos errores. Si aún no has probado React, te animamos a darle una oportunidad y experimentar la magia de esta increíble biblioteca JavaScript.
+interface BlogProps {
+  params: {
+    slug: string
+  }
+}
 
-¡Comienza a construir con React hoy mismo y lleva tus habilidades de desarrollo web al siguiente nivel!
+export async function generateMetadata({ params }: BlogProps) {
+  const post = await getPost(params.slug)
+  return {
+    title: post?.title
+  }
+}
 
----
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  return posts.map(post => (
+    {
+      params: { slug: post?.slug }
+    } as BlogProps))
+}
 
-*Espero que este breve post te haya dado una idea de lo que es React y sus beneficios principales. Si necesitas más información o ejemplos, no dudes en pedírmelos. ¡Feliz codificación!* 🚀
+export default async function Blog({ params }: BlogProps) {
+  const post = await getPost(params.slug)
 
-todo se derrumbo dentro de mi, dentro de mi
-lorem ipsum dolor sit delorem ipsum dolor sit de
+  if (!post) return notFound()
+
+  const headings = getHeadings(post.body)
+
+  return (
+    <>
+      <div className={styles.titleWrapper}>
+        <div className='container'>
+          <div className={styles.spacer}></div>
+          <h1 className={styles.title}>{post.title}</h1>
+        </div>
+      </div>
+
+      <div className={styles.contentContainer}>
+        <article className={styles.content}>
+          <h2 id='introduccion' className='hideElement'>
+            Introducción
+          </h2>
+          <PostBody>
+            {post.body}
+          </PostBody>
+        </article>
+        <aside className={styles.asideContainer}>
+          <TableOfContents
+            className={styles.tableOfContents}
+            headings={headings}
+          />
+        </aside>
+      </div>
+    </>
+  )
+}
+
+```

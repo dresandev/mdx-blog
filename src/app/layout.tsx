@@ -1,11 +1,11 @@
-import { Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { Header } from '@components/Header'
 import { Footer } from '@components/Footer'
 import '@styles/reset.css'
 import '@styles/globals.css'
 
-const roboto = Roboto({
+const inter = Inter({
   subsets: ['latin'],
   weight: [
     '400',
@@ -25,13 +25,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='es'>
-      <body className={roboto.className}>
+      <body className={`${inter.className} container`}>
         <div
           className='radialGradientBackground'
           draggable='false'
         ></div>
         <Header />
-        <main className='container'>
+        <main>
           {children}
         </main>
         <Footer />

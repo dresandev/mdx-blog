@@ -8,7 +8,6 @@ import { PostCard } from '@components/PostCard'
 import readerImg from '@assets/images/reader-3d.png'
 import styles from './page.module.css'
 
-// Tener en cuenta que este blog no contempla el caso en el que haya menos de 2 posts
 export default async function Home() {
   const posts = await getPosts()
   const sortedPosts = sortPosts({ posts: posts as [] })

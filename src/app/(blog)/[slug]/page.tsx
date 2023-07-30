@@ -4,6 +4,7 @@ import { getHeadings } from '@helpers/getHeadings'
 import { PostBody } from '@mdx/PostBody'
 import { TableOfContents } from '@components/TableOfContents'
 import styles from './page.module.css'
+import '@styles/markdown.css'
 
 interface BlogProps {
   params: {

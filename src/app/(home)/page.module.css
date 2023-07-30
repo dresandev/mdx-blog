@@ -8,7 +8,7 @@
 }
 
 .headerTitle {
-  font-size: clamp(4rem, 4vw, 4.5rem);
+  font-size: clamp(4rem, 4vw, 5rem);
 }
 
 .latestPost {
@@ -17,10 +17,10 @@
 }
 
 .h2Title {
-  font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: .5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
 }
 
 .imageDecoration {

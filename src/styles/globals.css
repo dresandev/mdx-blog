@@ -1,6 +1,6 @@
 :root {
-  --background-color: hsl(0, 0%, 0%);
-  --color: hsl(0, 0%, 100%);
+  --background-color: #121212;
+  --color: #fafbfc;
   --gray-color: hsl(227, 8%, 58%);
 }
 
@@ -30,19 +30,21 @@
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(farthest-side at 50% 50%, hsl(0, 0%, 16%), transparent);
+  background-image: radial-gradient(farthest-side at 50% 50%, hsl(0, 0%, 15%), transparent);
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 104rem;
   margin-inline: auto;
   padding-inline: 2rem;
 }
 
 .hideElement{
+  margin: 0;
+  padding: 0;
   height: .1rem;
+  opacity: 0;
   overflow: hidden;
   user-select: none;
   pointer-events: none;
-  visibility: hidden;
 }

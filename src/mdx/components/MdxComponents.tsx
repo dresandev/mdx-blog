@@ -13,7 +13,7 @@ export const mdxComponents: MDXComponents = {
     HTMLPreElement
   >) => (
     <Code {...props} theme='material-darker'>
-      {children as any}
+      {children}
     </Code>
   ),
 }

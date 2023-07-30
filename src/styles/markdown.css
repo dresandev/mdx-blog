@@ -1,0 +1,43 @@
+article>*+* {
+  margin-bottom: 2rem;
+}
+
+article h2,
+article h3 {
+  color: hsl(53, 93%, 54%);
+  margin-bottom: 1rem;
+}
+
+article a {
+  text-decoration: none;
+  color: hsl(215, 100%, 67%);
+}
+
+article pre {
+  font-size: 1.6rem;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+article ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding-left: var(--gap);
+}
+
+article ul ul {
+  list-style-type: circle;
+}
+
+article ol {
+  padding: 0;
+  list-style-position: inside;
+}
+
+article ol>li>ul {
+  margin-left: 1rem;
+  list-style-position: inside;
+  list-style-type: circle;
+}
