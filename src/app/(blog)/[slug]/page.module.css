@@ -20,16 +20,17 @@
 
 .contentContainer {
   display: flex;
-  gap: 5rem;
+  gap: 8rem;
   margin-block: 5rem;
 }
 
 .content {
   width: 100%;
-  max-width: 70rem;
+  max-width: 67rem;
 }
 
-.asideContainer {
+.aside {
+  order: 1;
   flex-basis: 25rem;
 }
 

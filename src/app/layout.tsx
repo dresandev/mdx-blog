@@ -1,11 +1,11 @@
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import type { Metadata } from 'next'
 import { Header } from '@components/Header'
 import { Footer } from '@components/Footer'
 import '@styles/reset.css'
 import '@styles/globals.css'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: [
     '400',
@@ -25,7 +25,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='es'>
-      <body className={`${inter.className} container`}>
+      <body className={`${poppins.className} container`}>
         <div
           className='radialGradientBackground'
           draggable='false'

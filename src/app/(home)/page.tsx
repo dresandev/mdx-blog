@@ -1,7 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import getPosts from '@helpers/getPosts'
 import { sortPosts } from '@helpers/sortPosts'
-import { CustomSearchBar } from '@components/CustomSearchBar'
 import { Separator } from '@components/Separator'
 import { PostList } from '@components/PostList'
 import { PostCard } from '@components/PostCard'
@@ -10,6 +10,11 @@ import styles from './page.module.css'
 
 export default async function Home() {
   const posts = await getPosts()
+
+  if (posts.length <= 1) {
+    throw new Error('Se necesitan minimo dos publicaciones para que la UI tenga sentido en este sitio')
+  }
+
   const sortedPosts = sortPosts({ posts: posts as [] })
   const latestPost = sortedPosts.shift()
 
@@ -23,12 +28,10 @@ export default async function Home() {
 
   return (
     <>
-      <div className={styles.header}>
-        <h1 className={styles.headerTitle}>
-          Dresan Blog
-        </h1>
-        <CustomSearchBar className={styles.searchBar} />
-      </div>
+      <h1 className={styles.h1Title}>Dresan Blog</h1>
+      <p className={styles.description}>
+        Si deseas conocer las tecnologías usadas en este sitio y demás recursos, puedes hacerlo en <Link className='link' href='/about'>esta página.</Link>
+      </p>
 
       <section className={styles.latestPost}>
         <div>

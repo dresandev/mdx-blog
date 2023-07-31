@@ -8,7 +8,7 @@ interface PostListProps {
 
 export const PostList: React.FC<PostListProps> = ({ posts }) => {
   return (
-    <div className={styles.postsGrid}>
+    <div className={styles.postsContainer}>
       {
         posts.map(post => (
           <PostCard

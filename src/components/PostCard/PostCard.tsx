@@ -18,7 +18,7 @@ export const PostCard: React.FC<PostCardProps> = ({
 }) => {
   return (
     <Link className={styles.postCard} href={href}>
-      <h3 className={styles.h3Title}>{title}</h3>
+      <h3 className={styles.title}>{title}</h3>
       <p>{description}</p>
       <p className={styles.time}>
         {publishedOn} — {estimatedReadingTime}

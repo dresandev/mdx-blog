@@ -4,21 +4,37 @@ article>*+* {
 
 article h2,
 article h3 {
-  color: hsl(53, 93%, 54%);
-  margin-bottom: 1rem;
+  position: relative;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+article h2 a::before,
+article h3 a::before {
+  content: '🔗';
+  position: absolute;
+  left: -4rem;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+article h2:hover a::before,
+article h3:hover a::before {
+  opacity: 1;
 }
 
 article a {
   text-decoration: none;
-  color: hsl(215, 100%, 67%);
-}
-
-article pre {
-  font-size: 1.6rem;
+  color: var(--blue-color);
 }
 
 article a:hover {
   text-decoration: underline;
+}
+
+article pre {
+  font-size: 1.6rem;
 }
 
 article ul {

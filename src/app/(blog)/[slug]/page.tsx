@@ -3,8 +3,8 @@ import getPosts, { getPost } from '@helpers/getPosts'
 import { getHeadings } from '@helpers/getHeadings'
 import { PostBody } from '@mdx/PostBody'
 import { TableOfContents } from '@components/TableOfContents'
-import styles from './page.module.css'
 import '@styles/markdown.css'
+import styles from './page.module.css'
 
 interface BlogProps {
   params: {
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 export default async function Blog({ params }: BlogProps) {
   const post = await getPost(params.slug)
 
-  if (!post) return notFound()
+  if (!post) notFound()
 
   const headings = getHeadings(post.body)
 
@@ -44,6 +44,12 @@ export default async function Blog({ params }: BlogProps) {
       </div>
 
       <div className={styles.contentContainer}>
+        <aside className={styles.aside}>
+          <TableOfContents
+            className={styles.tableOfContents}
+            headings={headings}
+          />
+        </aside>
         <article className={styles.content}>
           <h2 id='introduccion' className='hideElement'>
             Introducción
@@ -52,12 +58,6 @@ export default async function Blog({ params }: BlogProps) {
             {post.body}
           </PostBody>
         </article>
-        <aside className={styles.asideContainer}>
-          <TableOfContents
-            className={styles.tableOfContents}
-            headings={headings}
-          />
-        </aside>
       </div>
     </>
   )

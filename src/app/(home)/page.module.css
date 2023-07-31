@@ -1,14 +1,11 @@
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  margin-block: 5rem;
+.h1Title {
+  font-size: clamp(4rem, 4vw, 4.5rem);
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 }
 
-.headerTitle {
-  font-size: clamp(4rem, 4vw, 5rem);
+.description {
+  margin-bottom: 4rem;
 }
 
 .latestPost {
@@ -17,19 +14,10 @@
 }
 
 .h2Title {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: .2rem;
-}
-
-.imageDecoration {
-  filter: saturate(0);
-  transition: filter 250ms ease-in-out;
-}
-
-.imageDecoration:hover {
-  filter: saturate(1);
 }
 
 .posts {
@@ -44,9 +32,5 @@
 
   .imageDecoration {
     align-self: center;
-  }
-
-  .searchBar {
-    max-width: 100%;
   }
 }
