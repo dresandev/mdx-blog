@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import getPosts, { getPost } from '@helpers/getPosts'
 import { getHeadings } from '@helpers/getHeadings'
+import { Spacer } from '@components/Spacer'
 import { PostBody } from '@mdx/PostBody'
 import { TableOfContents } from '@components/TableOfContents'
 import '@styles/markdown.css'
@@ -15,7 +16,8 @@ interface BlogProps {
 export async function generateMetadata({ params }: BlogProps) {
   const post = await getPost(params.slug)
   return {
-    title: post?.title
+    title: post?.title,
+    description: post?.description
   }
 }
 
@@ -38,7 +40,7 @@ export default async function Blog({ params }: BlogProps) {
     <>
       <div className={styles.titleWrapper}>
         <div className='container'>
-          <div className={styles.spacer}></div>
+          <Spacer height='6rem' />
           <h1 className={styles.title}>{post.title}</h1>
         </div>
       </div>

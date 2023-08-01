@@ -1,6 +1,7 @@
 :root {
   --background-color: hsl(0, 0%, 7%);
   --color: hsl(210, 25%, 98%);
+  --selection-bg: hsl(0, 0%, 89%);
   --gray-color: hsl(227, 8%, 58%);
   --yellow-color: hsl(60, 100%, 50%);
   --pink-color: hsl(350, 100%, 88%);
@@ -27,7 +28,7 @@
 }
 
 ::selection {
-  background-color: var(--color);
+  background-color: var(--selection-bg);
   color: var(--background-color);
 }
 

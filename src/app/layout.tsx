@@ -1,5 +1,4 @@
 import { Poppins } from 'next/font/google'
-import type { Metadata } from 'next'
 import { Header } from '@components/Header'
 import { Footer } from '@components/Footer'
 import '@styles/reset.css'
@@ -13,9 +12,8 @@ const poppins = Poppins({
   ]
 })
 
-export const metadata: Metadata = {
-  title: 'Dresan Blog',
-  description: 'Blog personal sobre desarrollo de software enfocado especialmente en tecnologías Frontend (CSS, Javascript, Next.js, React, entre otras).',
+export const metadata= {
+  
 }
 
 interface RootLayoutProps {

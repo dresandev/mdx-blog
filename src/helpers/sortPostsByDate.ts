@@ -5,7 +5,7 @@ interface SortPostsProps {
   descMode?: boolean
 }
 
-export const sortPosts = ({ posts, descMode = true }: SortPostsProps): Post[] => {
+export const sortPostsByDate = ({ posts, descMode = true }: SortPostsProps): Post[] => {
   if (posts.length === 0) return []
 
   const sortedPosts = posts.sort((postA, postB) => {

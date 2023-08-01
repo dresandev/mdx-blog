@@ -6,11 +6,11 @@
   padding-block: 3rem;
   width: 100vw;
   background-color: var(--color);
-  color: var(--background-color);
 }
 
-.spacer {
-  height: 6rem;
+.title{
+  font-size: 3.2rem;
+  color: var(--background-color);
 }
 
 .title::selection {
@@ -45,7 +45,7 @@
     align-items: center;
   }
 
-  .asideContainer {
+  .aside {
     display: none;
   }
 }

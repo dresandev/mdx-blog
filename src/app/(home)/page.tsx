@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import getPosts from '@helpers/getPosts'
-import { sortPosts } from '@helpers/sortPosts'
+import { sortPostsByDate } from '@helpers/sortPostsByDate'
 import { Separator } from '@components/Separator'
 import { PostList } from '@components/PostList'
 import { PostCard } from '@components/PostCard'
 import readerImg from '@assets/images/reader-3d.png'
 import styles from './page.module.css'
+
+export const metadata = {
+  title: 'Dresan Blog',
+  description: 'Blog personal sobre desarrollo de software enfocado especialmente en tecnologías Frontend (CSS, Javascript, Next.js, React, entre otras).',
+}
 
 export default async function Home() {
   const posts = await getPosts()
@@ -15,7 +20,7 @@ export default async function Home() {
     throw new Error('Se necesitan minimo dos publicaciones para que la UI tenga sentido en este sitio')
   }
 
-  const sortedPosts = sortPosts({ posts: posts as [] })
+  const sortedPosts = sortPostsByDate({ posts: posts as [] })
   const latestPost = sortedPosts.shift()
 
   const {
