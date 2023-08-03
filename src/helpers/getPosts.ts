@@ -5,7 +5,7 @@ import fs from 'fs/promises'
 import type { Post } from '@types'
 
 const getPosts = cache(async () => {
-  const relativeFilePath = './posts/'
+  const relativeFilePath = './src/posts/'
   const posts = await fs.readdir(relativeFilePath)
 
   return Promise.all(
