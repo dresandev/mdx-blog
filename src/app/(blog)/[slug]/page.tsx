@@ -22,16 +22,12 @@ export async function generateMetadata({ params }: BlogProps) {
 }
 
 export async function generateStaticParams() {
-  try {
-    const posts = await getPosts()
+  const posts = await getPosts()
 
-    return posts.map(post => (
-      {
-        params: { slug: post?.slug }
-      } as BlogProps))
-  } catch (error) {
-    console.log('si es aqui')
-  }
+  return posts.map(post => (
+    {
+      params: { slug: post?.slug }
+    } as BlogProps))
 }
 
 export default async function Blog({ params }: BlogProps) {
