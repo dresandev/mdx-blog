@@ -54,6 +54,7 @@ export default async function Home() {
           src={readerImg}
           alt='Imagen 3d de un lector'
           draggable={false}
+          priority
         />
       </section>
       <Separator />
