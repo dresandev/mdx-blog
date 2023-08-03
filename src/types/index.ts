@@ -2,6 +2,7 @@ export interface Post {
   title: string
   slug: string
   publishedOn: string
+  lastModified: string
   description: string
   body: string
   estimatedReadingTime: string

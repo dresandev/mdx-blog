@@ -12,10 +12,6 @@ const poppins = Poppins({
   ]
 })
 
-export const metadata= {
-  
-}
-
 interface RootLayoutProps {
   children: React.ReactNode
 }

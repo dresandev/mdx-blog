@@ -1,0 +1,149 @@
+---
+title: Cómo Configurar una Aplicación de React con Styled Components
+description: Cómo configurar una aplicación de React utilizando Styled Components
+slug: react-styled-components
+published: true
+publishedOn: August 2, 2023
+lastModified: August 2, 2023
+estimatedReadingTime: 4 min
+---
+
+En esta guía, aprenderás cómo configurar una aplicación de React utilizando Styled Components, una biblioteca popular que permite escribir estilos CSS dentro de tus componentes de React. Esta combinación te permitirá crear componentes reutilizables y estilos más mantenibles para tu proyecto.
+
+## Paso 1: Crear una Aplicación de React
+
+Antes de comenzar con Styled Components, asegúrate de tener Node.js y npm instalados en tu máquina. Si aún no tienes una aplicación de React creada, puedes generar una usando Create React App:
+
+```bash
+npx create-react-app my-app
+cd my-app
+```
+
+## Paso 2: Instalar Styled Components
+
+Dentro del directorio de tu aplicación, instala Styled Components mediante npm o yarn:
+
+```bash
+npm install styled-components
+```
+
+O
+
+```bash
+yarn add styled-components
+```
+
+## Paso 3: Crear Componentes con Styled Components
+
+Ahora que tienes Styled Components instalado, comencemos a crear algunos componentes y aplicar estilos a ellos.
+
+Supongamos que tienes un componente Button que deseas estilizar. En lugar de utilizar archivos CSS externos, puedes definir los estilos dentro del mismo componente utilizando Styled Components.
+
+```jsx
+import React from 'react';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a049;
+  }
+`;
+
+const Button = ({ children }) => {
+  return <StyledButton>{children}</StyledButton>;
+};
+
+export default Button;
+```
+
+## Paso 4: Usar los Componentes Estilizados
+
+Ahora que hemos creado el componente estilizado Button, podemos usarlo en otras partes de nuestra aplicación:
+
+```jsx
+import React from 'react';
+import Button from './Button';
+
+const App = () => {
+  return (
+    <div>
+      <h1>¡Mi Aplicación de React con Styled Components!</h1>
+      <Button>Click Me</Button>
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Paso 5: Aplicar Estilos Condicionales
+
+Styled Components también nos permite aplicar estilos condicionales basados en las props de nuestros componentes. Por ejemplo, podemos crear un botón que cambie de color según su propiedad `type`:
+
+```jsx
+import React from 'react';
+import styled, { css } from 'styled-components';
+
+const getColorByType = (type) => {
+  switch (type) {
+    case 'primary':
+      return '#4CAF50';
+    case 'secondary':
+      return '#008CBA';
+    default:
+      return '#ccc';
+  }
+};
+
+const StyledButton = styled.button`
+  background-color: ${(props) => getColorByType(props.type)};
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${(props) => (props.type === 'primary' ? '#45a049' : '#00738d')};
+  }
+`;
+
+const Button = ({ children, type }) => {
+  return <StyledButton type={type}>{children}</StyledButton>;
+};
+
+export default Button;
+```
+
+Luego, puedes usar el botón de diferentes formas:
+
+```jsx
+import React from 'react';
+import Button from './Button';
+
+const App = () => {
+  return (
+    <div>
+      <h1>¡Mi Aplicación de React con Styled Components!</h1>
+      <Button type="primary">Primary Button</Button>
+      <Button type="secondary">Secondary Button</Button>
+      <Button>Default Button</Button>
+    </div>
+  );
+};
+
+export default App;
+```
+
+Con esto, has configurado y comenzado a usar Styled Components en tu aplicación de React. Ahora puedes crear estilos más mantenibles y reutilizables para tus componentes, lo que facilitará el desarrollo de tu proyecto.
+
+¡Feliz codificación!
